@@ -38,6 +38,8 @@ class Translations implements i69n.I69nMessageBundle {
   String get app_title => "NASA Gallery";
   String get home_tab => "Explore";
   String get topics_tab => "Topics";
+  String get news_tab => "News";
+  String get configure_tab => "Configure";
   Object operator [](String key) {
     var index = key.indexOf('.');
     if (index > 0) {
@@ -51,6 +53,10 @@ class Translations implements i69n.I69nMessageBundle {
         return home_tab;
       case 'topics_tab':
         return topics_tab;
+      case 'news_tab':
+        return news_tab;
+      case 'configure_tab':
+        return configure_tab;
       default:
         throw Exception('Message $key doesn\'t exist in $this');
     }

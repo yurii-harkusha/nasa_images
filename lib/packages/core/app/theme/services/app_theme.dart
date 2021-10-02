@@ -10,6 +10,7 @@ ThemeData lightThemeData() => ThemeData(
     scaffoldBackgroundColor: Colors.white,
     //textTheme: GoogleFonts.openSansTextTheme(textTheme),
     cardTheme: _cardTheme,
+    canvasColor: Colors.white,
     //inputDecorationTheme: _inputDecorationTheme,
     indicatorColor: _colorScheme.primary,
     //tabBarTheme: _tabBarTheme,

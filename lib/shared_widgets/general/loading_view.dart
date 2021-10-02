@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class LoadingView extends StatelessWidget {
-  const LoadingView({Key? key, required this.color}) : super(key: key);
+  const LoadingView({required this.color, Key? key}) : super(key: key);
 
   final Color color;
 

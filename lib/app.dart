@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:nasa_images/packages/core/app/injection/injection.dart';
-import 'package:nasa_images/packages/core/app/localization/app_localization.dart';
-import 'package:nasa_images/packages/core/app/router/services/app_router.gr.dart';
-import 'package:nasa_images/packages/core/app/theme/services/app_theme.dart';
-import 'package:nasa_images/packages/tabs_page/bloc/tabs_bloc.dart';
+
+import 'packages/core/app/injection/injection.dart';
+import 'packages/core/app/localization/app_localization.dart';
+import 'packages/core/app/router/services/app_router.gr.dart';
+import 'packages/core/app/theme/services/app_theme.dart';
+import 'packages/tabs_page/bloc/tabs_bloc.dart';
 
 class App extends StatefulWidget {
   const App({

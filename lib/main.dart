@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:nasa_images/app.dart';
-import 'package:nasa_images/packages/core/app/injection/injection.dart';
+
+import 'app.dart';
+import 'packages/core/app/injection/injection.dart';
 
 const env = String.fromEnvironment('ENV', defaultValue: 'prod');
 
-void main() async {
+void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
     systemNavigationBarColor: Colors.white,
     systemNavigationBarDividerColor: Colors.transparent,
     statusBarColor: Colors.transparent,
@@ -17,5 +18,5 @@ void main() async {
   ));
   configureInjection(environment: env);
 
-  runApp(App());
+  runApp(const App());
 }

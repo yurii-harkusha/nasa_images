@@ -3,7 +3,8 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:nasa_images/packages/home_page/services/home_service.dart';
+
+import '../services/home_service.dart';
 
 part 'home_bloc.freezed.dart';
 part 'home_event.dart';

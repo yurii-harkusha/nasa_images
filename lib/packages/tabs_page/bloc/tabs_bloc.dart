@@ -17,14 +17,12 @@ class TabsBloc extends Bloc<TabsEvent, TabsState> {
   @override
   Stream<TabsState> mapEventToState(TabsEvent event) async* {
     yield* event.when(
-      selectTab: (int index) async* {
+      selectTab: (index) async* {
         selectedIndex = index;
         yield state.copyWith(selectedIndex: selectedIndex);
       },
     );
   }
 
-  int getSelectedIndex() {
-    return selectedIndex;
-  }
+  int getSelectedIndex() => selectedIndex;
 }

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:nasa_images/packages/core/app/theme/services/app_theme.dart';
-import 'package:nasa_images/packages/home_page/bloc/home_bloc.dart';
-import 'package:nasa_images/shared_widgets/general/loading_view.dart';
+
+import '../../../shared_widgets/general/loading_view.dart';
+import '../../core/app/theme/services/app_theme.dart';
+import '../bloc/home_bloc.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({
@@ -15,7 +16,7 @@ class HomeView extends StatelessWidget {
         body: SafeArea(
           child: BlocBuilder<HomeBloc, HomeState>(
             builder: (context, state) => state.map(
-              loading: (value) => LoadingView(
+              loading: (value) => const LoadingView(
                 color: primaryColor,
               ),
               initialized: (value) => Container(
