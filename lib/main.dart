@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:nasa_images/app.dart';
-import 'package:nasa_images/packages/core/injection/injection.dart';
+import 'package:nasa_images/packages/core/app/injection/injection.dart';
 
 const env = String.fromEnvironment('ENV', defaultValue: 'prod');
 

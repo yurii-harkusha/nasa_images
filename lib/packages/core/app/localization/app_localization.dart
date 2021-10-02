@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nasa_images/packages/core/localization/translations/translations.i69n.dart';
+import 'package:nasa_images/packages/core/app/localization/translations/translations.i69n.dart';
 
 const _supportedLocales = ['en'];
 

@@ -36,6 +36,8 @@ String _cardinal(int count,
 class Translations implements i69n.I69nMessageBundle {
   const Translations();
   String get app_title => "NASA Gallery";
+  String get home_tab => "Explore";
+  String get topics_tab => "Topics";
   Object operator [](String key) {
     var index = key.indexOf('.');
     if (index > 0) {
@@ -45,6 +47,10 @@ class Translations implements i69n.I69nMessageBundle {
     switch (key) {
       case 'app_title':
         return app_title;
+      case 'home_tab':
+        return home_tab;
+      case 'topics_tab':
+        return topics_tab;
       default:
         throw Exception('Message $key doesn\'t exist in $this');
     }

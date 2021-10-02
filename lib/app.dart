@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:flutter_portal/flutter_portal.dart';
-import 'package:nasa_images/packages/core/injection/injection.dart';
-import 'package:nasa_images/packages/core/localization/app_localization.dart';
-import 'package:nasa_images/packages/core/theme/services/app_theme.dart';
+import 'package:nasa_images/packages/core/app/injection/injection.dart';
+import 'package:nasa_images/packages/core/app/localization/app_localization.dart';
+import 'package:nasa_images/packages/core/app/router/services/app_router.gr.dart';
+import 'package:nasa_images/packages/core/app/theme/services/app_theme.dart';
+import 'package:nasa_images/packages/tabs_page/bloc/tabs_bloc.dart';
 
 class App extends StatefulWidget {
   const App({
@@ -27,24 +28,20 @@ class AppState extends State<App> {
 
   @override
   Widget build(BuildContext context) => BlocProvider(
-        create: (context) => getIt<TabsPageBloc>(),
-        child: Portal(
-          child: MaterialApp.router(
-            routeInformationParser: getIt<AppRouter>()
-                .defaultRouteParser(includePrefixMatches: true),
-            routerDelegate: getIt<AppRouter>().delegate(
-              initialDeepLink: '/',
-            ),
-            localizationsDelegates: const [
-              AppLocalization.delegate,
-              GlobalMaterialLocalizations.delegate,
-              GlobalWidgetsLocalizations.delegate,
-            ],
-            theme: _themeLight,
-            darkTheme: _themeDark,
-            supportedLocales: AppLocalization.supportedLocales,
-            builder: (_, child) => LockOrientation(child: child),
-          ),
+        create: (context) => getIt<TabsBloc>(),
+        child: MaterialApp.router(
+          routeInformationParser:
+              getIt<AppRouter>().defaultRouteParser(includePrefixMatches: true),
+          routerDelegate: getIt<AppRouter>().delegate(),
+          localizationsDelegates: const [
+            AppLocalization.delegate,
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+          ],
+          theme: _themeLight,
+          darkTheme: _themeDark,
+          supportedLocales: AppLocalization.supportedLocales,
+          builder: (_, child) => LockOrientation(child: child),
         ),
       );
 }
