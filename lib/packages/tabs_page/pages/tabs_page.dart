@@ -44,10 +44,10 @@ class _TabsPageControllerState extends State<_TabsPageController> {
             body: _screens[s.selectedIndex],
             bottomNavigationBar: BottomNavigationBar(
               elevation: 32,
+              selectedLabelStyle: textTheme.button,
+              unselectedLabelStyle: textTheme.button,
               enableFeedback: true,
-              selectedFontSize: 15,
-              unselectedFontSize: 15,
-              type: BottomNavigationBarType.shifting,
+              type: BottomNavigationBarType.fixed,
               showUnselectedLabels: true,
               selectedItemColor: primaryColor,
               unselectedItemColor: Colors.black38,
@@ -101,11 +101,11 @@ class _TabsPageControllerState extends State<_TabsPageController> {
       );
 
   Widget _materialIconTheme(IconData icon, bool isSelected) => Padding(
-        padding: const EdgeInsets.only(bottom: 8),
+        padding: const EdgeInsets.only(bottom: 10),
         child: Icon(
           icon,
           color: isSelected ? primaryColor : Colors.black38,
-          size: 34,
+          size: 28,
         ),
       );
 }

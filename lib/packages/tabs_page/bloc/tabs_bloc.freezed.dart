@@ -145,14 +145,13 @@ class _$_SelectTab implements _SelectTab {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _SelectTab &&
-            (identical(other.index, index) ||
-                const DeepCollectionEquality().equals(other.index, index)));
+        (other.runtimeType == runtimeType &&
+            other is _SelectTab &&
+            (identical(other.index, index) || other.index == index));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(index);
+  int get hashCode => Object.hash(runtimeType, index);
 
   @JsonKey(ignore: true)
   @override
@@ -220,7 +219,7 @@ abstract class _SelectTab implements TabsEvent {
   const factory _SelectTab({int index}) = _$_SelectTab;
 
   @override
-  int get index => throw _privateConstructorUsedError;
+  int get index;
   @override
   @JsonKey(ignore: true)
   _$SelectTabCopyWith<_SelectTab> get copyWith =>
@@ -358,15 +357,14 @@ class _$_Loaded implements _Loaded {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Loaded &&
+        (other.runtimeType == runtimeType &&
+            other is _Loaded &&
             (identical(other.selectedIndex, selectedIndex) ||
-                const DeepCollectionEquality()
-                    .equals(other.selectedIndex, selectedIndex)));
+                other.selectedIndex == selectedIndex));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(selectedIndex);
+  int get hashCode => Object.hash(runtimeType, selectedIndex);
 
   @JsonKey(ignore: true)
   @override
@@ -434,7 +432,7 @@ abstract class _Loaded implements TabsState {
   const factory _Loaded({int selectedIndex}) = _$_Loaded;
 
   @override
-  int get selectedIndex => throw _privateConstructorUsedError;
+  int get selectedIndex;
   @override
   @JsonKey(ignore: true)
   _$LoadedCopyWith<_Loaded> get copyWith => throw _privateConstructorUsedError;

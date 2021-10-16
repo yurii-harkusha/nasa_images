@@ -106,7 +106,8 @@ class _$_Initialize implements _Initialize {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initialize);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Initialize);
   }
 
   @override
@@ -274,7 +275,8 @@ class _$Loading implements Loading {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is Loading);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is Loading);
   }
 
   @override
@@ -377,7 +379,8 @@ class _$Initialized implements Initialized {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is Initialized);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is Initialized);
   }
 
   @override
