@@ -23,4 +23,3 @@ doc/api/
 *.js.deps
 *.js.map
 private_constants.dart
-.idea
