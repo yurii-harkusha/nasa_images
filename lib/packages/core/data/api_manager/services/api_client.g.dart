@@ -15,18 +15,18 @@ class _ApiClient implements ApiClient {
 
   @override
   Future<AstronomyPictureOfTheDay> getAstronomyPictureOfTheDay(
-      {required astronomyPictureOfTheDayRequest}) async {
+      {required api_key, required thumbs}) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
-    _data.addAll(astronomyPictureOfTheDayRequest.toJson());
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<AstronomyPictureOfTheDay>(
-            Options(method: 'GET', headers: _headers, extra: _extra)
-                .compose(_dio.options, '/planetary/apod',
-                    queryParameters: queryParameters, data: _data)
-                .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+        _setStreamType<AstronomyPictureOfTheDay>(Options(
+                method: 'GET', headers: _headers, extra: _extra)
+            .compose(
+                _dio.options, '/planetary/apod?api_key=$api_key&thumbs=$thumbs',
+                queryParameters: queryParameters, data: _data)
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     final value = AstronomyPictureOfTheDay.fromJson(_result.data!);
     return value;
   }

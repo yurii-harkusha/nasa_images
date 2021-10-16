@@ -3,7 +3,6 @@ import 'package:injectable/injectable.dart';
 import 'package:retrofit/retrofit.dart';
 
 import '../../models_remote/astronomy_picture_of_the_day.dart';
-import '../models/requests/astronomy_picture_of_the_day_request.dart';
 
 part 'api_client.g.dart';
 
@@ -13,9 +12,8 @@ abstract class ApiClient {
   @factoryMethod
   factory ApiClient(Dio dio, {@Named('BaseUrl') String baseUrl}) = _ApiClient;
 
-  @GET('/planetary/apod')
+  @GET('/planetary/apod?api_key={api_key}&thumbs={thumbs}')
   Future<AstronomyPictureOfTheDay> getAstronomyPictureOfTheDay(
-      {@Body()
-          required AstronomyPictureOfTheDayRequest
-              astronomyPictureOfTheDayRequest});
+      {@Path('api_key') required String api_key,
+      @Path('thumbs') required bool thumbs});
 }
