@@ -5,8 +5,8 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'packages/core/app/injection/injection.dart';
 import 'packages/core/app/localization/app_localization.dart';
-import 'packages/core/app/router/services/app_router.gr.dart';
-import 'packages/core/app/theme/services/app_theme.dart';
+import 'packages/core/app/router/app_router.gr.dart';
+import 'packages/core/app/theme/app_theme.dart';
 import 'packages/tabs_page/bloc/tabs_bloc.dart';
 
 class App extends StatefulWidget {

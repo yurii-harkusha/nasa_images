@@ -5,7 +5,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../core/app/injection/injection.dart';
 import '../../core/app/localization/app_localization.dart';
-import '../../core/app/theme/services/app_theme.dart';
+import '../../core/app/theme/app_theme.dart';
 import '../../home_page/pages/home_page.dart';
 import '../bloc/tabs_bloc.dart';
 

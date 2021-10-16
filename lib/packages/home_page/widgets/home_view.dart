@@ -3,7 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../shared_widgets/general/loading_view.dart';
-import '../../core/app/theme/services/app_theme.dart';
+import '../../core/app/theme/app_theme.dart';
 import '../bloc/home_bloc.dart';
 
 class HomeView extends StatelessWidget {

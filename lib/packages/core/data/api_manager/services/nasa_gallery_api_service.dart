@@ -3,7 +3,7 @@ import 'package:injectable/injectable.dart';
 import '../../../app/injection/injection.dart';
 import '../../../utils/services/env_constants_service.dart';
 import '../../models_remote/astronomy_picture_of_the_day.dart';
-import '../models/requests/astronomy_picture_of_the_day_request.dart';
+import '../../models_remote/requests/astronomy_picture_of_the_day_request.dart';
 import 'api_client.dart';
 import 'api_service.dart';
 

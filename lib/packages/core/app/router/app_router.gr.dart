@@ -7,8 +7,8 @@
 import 'package:auto_route/auto_route.dart' as _i3;
 import 'package:flutter/material.dart' as _i4;
 
-import '../../../../home_page/pages/home_page.dart' as _i2;
-import '../../../../tabs_page/pages/tabs_page.dart' as _i1;
+import '../../../home_page/pages/home_page.dart' as _i2;
+import '../../../tabs_page/pages/tabs_page.dart' as _i1;
 
 class AppRouter extends _i3.RootStackRouter {
   AppRouter([_i4.GlobalKey<_i4.NavigatorState>? navigatorKey])
