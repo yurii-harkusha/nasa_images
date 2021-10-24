@@ -1,6 +1,6 @@
 import 'package:injectable/injectable.dart';
 
-import '../../app/constants/private_constants.dart';
+import '../../app/constants/constants.dart';
 
 abstract class EnvConstantsService {
   String getApiKey();
@@ -10,7 +10,7 @@ abstract class EnvConstantsService {
 @prod
 class ProdEnvConstantsService implements EnvConstantsService {
   @override
-  String getApiKey() => PrivateConstants.prodNasaApiKey;
+  String getApiKey() => Constants.prodNasaApiKey;
 }
 
 @LazySingleton(as: EnvConstantsService)
@@ -18,5 +18,5 @@ class ProdEnvConstantsService implements EnvConstantsService {
 @test
 class DevEnvConstantsService implements EnvConstantsService {
   @override
-  String getApiKey() => PrivateConstants.devNasaApiKey;
+  String getApiKey() => Constants.devNasaApiKey;
 }

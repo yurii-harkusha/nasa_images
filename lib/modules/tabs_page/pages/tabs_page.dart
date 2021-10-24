@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../core/app/injection/injection.dart';
 import '../../../core/app/localization/app_localization.dart';
@@ -49,8 +48,9 @@ class _TabsPageControllerState extends State<_TabsPageController> {
               enableFeedback: true,
               type: BottomNavigationBarType.fixed,
               showUnselectedLabels: true,
-              selectedItemColor: primaryColor,
-              unselectedItemColor: Colors.black38,
+              selectedItemColor: Theme.of(context).colorScheme.primary,
+              unselectedItemColor:
+                  Theme.of(context).colorScheme.secondaryVariant,
               currentIndex: s.selectedIndex,
               onTap: (selectedIndex) => context
                   .read<TabsBloc>()
@@ -91,20 +91,25 @@ class _TabsPageControllerState extends State<_TabsPageController> {
         ),
       );
 
-  Widget _iconTheme(String path, bool isSelected) => Padding(
-        padding: const EdgeInsets.only(bottom: 8),
-        child: SvgPicture.asset(
-          path,
-          color: isSelected ? primaryColor : Colors.black38,
-          height: 21,
-        ),
-      );
+  //TODO: Tab icon theme for future custom SVG images
+  //Widget _iconTheme(String path, bool isSelected) => Padding(
+  //      padding: const EdgeInsets.only(bottom: 8),
+  //      child: SvgPicture.asset(
+  //        path,
+  //        color: isSelected
+  //            ? Theme.of(context).colorScheme.primary
+  //            : Theme.of(context).colorScheme.secondaryVariant,
+  //        height: 21,
+  //      ),
+  //    );
 
   Widget _materialIconTheme(IconData icon, bool isSelected) => Padding(
         padding: const EdgeInsets.only(bottom: 10),
         child: Icon(
           icon,
-          color: isSelected ? primaryColor : Colors.black38,
+          color: isSelected
+              ? Theme.of(context).colorScheme.primary
+              : Theme.of(context).colorScheme.secondaryVariant,
           size: 28,
         ),
       );

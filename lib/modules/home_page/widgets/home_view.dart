@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../core/app/theme/app_theme.dart';
 import '../../../shared_widgets/general/loading_view.dart';
 import '../bloc/home_bloc.dart';
 
@@ -16,11 +15,11 @@ class HomeView extends StatelessWidget {
         body: SafeArea(
           child: BlocBuilder<HomeBloc, HomeState>(
             builder: (context, state) => state.map(
-              loading: (value) => const LoadingView(
-                color: primaryColor,
+              loading: (value) => LoadingView(
+                color: Theme.of(context).colorScheme.primary,
               ),
               initialized: (value) => Container(
-                color: Colors.black54,
+                color: Theme.of(context).colorScheme.background,
               ),
             ),
           ),

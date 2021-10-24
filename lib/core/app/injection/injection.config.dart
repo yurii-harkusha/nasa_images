@@ -26,9 +26,9 @@ import '../../data/repository/usecases/get_astronomy_picture_of_the_day_usecase.
     as _i20;
 import '../../utils/services/env_constants_service.dart' as _i6;
 import '../router/app_router.gr.dart' as _i3;
-import '../router/app_routes.dart' as _i4;
-import '../router/app_routes_module.dart' as _i21;
-import '../router/nasa_gallery_routes.dart' as _i5;
+import '../router/module/app_routes_module.dart' as _i21;
+import '../router/routes/app_routes.dart' as _i4;
+import '../router/routes/nasa_gallery_routes.dart' as _i5;
 
 const String _prod = 'prod';
 const String _dev = 'dev';
@@ -49,8 +49,7 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
   gh.lazySingleton<_i6.EnvConstantsService>(() => _i6.DevEnvConstantsService(),
       registerFor: {_dev, _test});
   gh.lazySingleton<_i7.HomeService>(() => _i7.HomeService());
-  gh.factory<_i8.LocalDataSource>(() => _i9.NasaGalleryLocalDataSource(),
-      registerFor: {_prod, _dev});
+  gh.factory<_i8.LocalDataSource>(() => _i9.NasaGalleryLocalDataSource());
   gh.lazySingleton<String>(() => apiModule.baseUrlProd,
       instanceName: 'BaseUrl', registerFor: {_prod});
   gh.lazySingleton<String>(() => apiModule.baseUrlDev,
