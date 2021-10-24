@@ -13,6 +13,9 @@ const onSurfaceColor = Color(0xff121212);
 const onBackgroundColor = Color(0xff121212);
 const onErrorColor = Color(0xFF000000);
 
+final themeLight = lightThemeData();
+final themeDark = darkThemeData();
+
 ThemeData lightThemeData() => ThemeData(
       primaryColor: _lightColorScheme.primary,
       primaryColorDark: _lightColorScheme.primaryVariant,

@@ -19,9 +19,6 @@ class App extends StatefulWidget {
 }
 
 class AppState extends State<App> {
-  final _themeLight = lightThemeData();
-  final _themeDark = darkThemeData();
-
   @override
   void initState() {
     super.initState();
@@ -39,8 +36,8 @@ class AppState extends State<App> {
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,
           ],
-          theme: _themeLight,
-          darkTheme: _themeDark,
+          theme: themeLight,
+          darkTheme: themeDark,
           supportedLocales: AppLocalization.supportedLocales,
           builder: (_, child) => LockOrientation(child: child),
         ),
