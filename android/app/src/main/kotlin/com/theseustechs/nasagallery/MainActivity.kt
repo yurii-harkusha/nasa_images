@@ -1,4 +1,4 @@
-package com.theseustechs.nasagallery.nasa_images
+package com.theseustechs.nasagallery
 
 import io.flutter.embedding.android.FlutterActivity
 

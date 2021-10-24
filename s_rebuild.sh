@@ -1,3 +1,3 @@
 #!/bin/sh
-flutter pub get
-flutter pub run build_runner build --delete-conflicting-outputs
+sh s_get.sh
+sh s_generate.sh

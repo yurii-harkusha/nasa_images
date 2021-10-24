@@ -6,12 +6,13 @@ class LoadingView extends StatelessWidget {
   final Color color;
 
   @override
-  Widget build(BuildContext context) => Container(
+  Widget build(BuildContext context) => SizedBox(
         width: double.infinity,
         height: double.infinity,
-        color: color,
-        child: const Center(
-          child: CircularProgressIndicator(),
+        child: Center(
+          child: CircularProgressIndicator(
+            color: color,
+          ),
         ),
       );
 }
