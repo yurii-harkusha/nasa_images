@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
-import 'packages/core/app/injection/injection.dart';
-import 'packages/core/app/localization/app_localization.dart';
-import 'packages/core/app/router/app_router.gr.dart';
-import 'packages/core/app/theme/app_theme.dart';
-import 'packages/tabs_page/bloc/tabs_bloc.dart';
+import 'core/app/injection/injection.dart';
+import 'core/app/localization/app_localization.dart';
+import 'core/app/router/app_router.gr.dart';
+import 'core/app/theme/app_theme.dart';
+import 'modules/tabs_page/bloc/tabs_bloc.dart';
+import 'shared_widgets/general/lock_orientation.dart';
 
 class App extends StatefulWidget {
   const App({
@@ -45,19 +45,4 @@ class AppState extends State<App> {
           builder: (_, child) => LockOrientation(child: child),
         ),
       );
-}
-
-class LockOrientation extends StatelessWidget {
-  const LockOrientation({Key? key, this.child}) : super(key: key);
-
-  final Widget? child;
-
-  @override
-  Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size.shortestSide;
-    if (size < 600) {
-      SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
-    }
-    return child ?? Container();
-  }
 }

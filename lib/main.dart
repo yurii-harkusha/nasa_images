@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'app.dart';
-import 'packages/core/app/injection/injection.dart';
+import 'core/app/injection/injection.dart';
 
 const env = String.fromEnvironment('ENV', defaultValue: 'prod');
 

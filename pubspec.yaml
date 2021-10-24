@@ -1,7 +1,7 @@
 name: nasa_images
 description: NASA gallery app
 
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: 'none'
 
 version: 1.0.0+1
 
@@ -21,9 +21,9 @@ dependencies:
   i69n: ^2.0.1
   freezed_annotation: ^0.15.0
   flutter_svg: ^0.23.0+1
-  auto_route: ^2.4.2
+  auto_route: ^3.0.3
   google_fonts: ^2.1.0
-  dio: ^4.0.0
+  dio: ^4.0.1
   retrofit: ^2.0.1
   json_annotation: ^4.3.0
   dartz: ^0.10.0
@@ -34,11 +34,11 @@ dev_dependencies:
     sdk: flutter
   build_runner: ^2.1.4
   injectable_generator: ^1.5.2
-  auto_route_generator: ^2.4.1
+  auto_route_generator: ^3.0.1
   retrofit_generator: ^2.0.1+2
   freezed: ^0.15.0+1
   extra_pedantic: ^1.5.0
-  json_serializable: ^6.0.0
+  json_serializable: ^6.0.1
 
 flutter:
   uses-material-design: true
