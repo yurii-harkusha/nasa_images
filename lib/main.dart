@@ -8,6 +8,13 @@ const env = String.fromEnvironment('ENV', defaultValue: 'prod');
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
+  setSystemUIOverlayStyles();
+  configureInjection(environment: env);
+
+  runApp(const App());
+}
+
+void setSystemUIOverlayStyles() {
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
     systemNavigationBarColor: Colors.white,
     systemNavigationBarDividerColor: Colors.transparent,
@@ -16,7 +23,4 @@ void main() {
     statusBarIconBrightness: Brightness.dark,
     statusBarBrightness: Brightness.light,
   ));
-  configureInjection(environment: env);
-
-  runApp(const App());
 }
