@@ -3,3 +3,5 @@ home_tab: Explore
 topics_tab: Topics
 news_tab: News
 configure_tab: Configure
+data_loading_error: Data loading error. Please check your internet connection or try later.
+nasa_picture_of_day(String date, String pictureDescription): "NASA astronomy picture of a day ${date}:\n${pictureDescription}"

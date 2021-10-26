@@ -8,25 +8,26 @@ import 'package:dio/dio.dart' as _i13;
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 
-import '../../../modules/home_page/bloc/home_bloc.dart' as _i14;
-import '../../../modules/home_page/services/home_service.dart' as _i7;
-import '../../../modules/tabs_page/bloc/tabs_bloc.dart' as _i10;
-import '../../data/api_manager/client/api_client.dart' as _i19;
-import '../../data/api_manager/module/api_module.dart' as _i22;
+import '../../../modules/home_page/bloc/home_bloc.dart' as _i21;
+import '../../../modules/home_page/services/home_service.dart' as _i20;
+import '../../../modules/tabs_page/bloc/tabs_bloc.dart' as _i9;
+import '../../data/api_manager/client/api_client.dart' as _i18;
+import '../../data/api_manager/module/api_module.dart' as _i23;
 import '../../data/api_manager/services/api_service.dart' as _i11;
 import '../../data/api_manager/services/nasa_gallery_api_service.dart' as _i12;
-import '../../data/datasource_local/local_data_source.dart' as _i8;
-import '../../data/datasource_local/nasa_gallery_local_data_source.dart' as _i9;
+import '../../data/datasource_local/local_data_source.dart' as _i7;
+import '../../data/datasource_local/nasa_gallery_local_data_source.dart' as _i8;
 import '../../data/datasource_remote/nasa_gallery_remote_data_source.dart'
-    as _i16;
-import '../../data/datasource_remote/remote_data_source.dart' as _i15;
-import '../../data/repository/services/nasa_gallery_repository.dart' as _i18;
-import '../../data/repository/services/repository.dart' as _i17;
+    as _i15;
+import '../../data/datasource_remote/remote_data_source.dart' as _i14;
+import '../../data/repository/services/nasa_gallery_repository.dart' as _i17;
+import '../../data/repository/services/repository.dart' as _i16;
 import '../../data/repository/usecases/get_astronomy_picture_of_the_day_usecase.dart'
-    as _i20;
+    as _i19;
 import '../../utils/services/env_constants_service.dart' as _i6;
+import '../../utils/services/youtube_url_service.dart' as _i10;
 import '../router/app_router.gr.dart' as _i3;
-import '../router/module/app_routes_module.dart' as _i21;
+import '../router/module/app_routes_module.dart' as _i22;
 import '../router/routes/app_routes.dart' as _i4;
 import '../router/routes/nasa_gallery_routes.dart' as _i5;
 
@@ -48,31 +49,34 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
       registerFor: {_prod});
   gh.lazySingleton<_i6.EnvConstantsService>(() => _i6.DevEnvConstantsService(),
       registerFor: {_dev, _test});
-  gh.lazySingleton<_i7.HomeService>(() => _i7.HomeService());
-  gh.factory<_i8.LocalDataSource>(() => _i9.NasaGalleryLocalDataSource());
+  gh.factory<_i7.LocalDataSource>(() => _i8.NasaGalleryLocalDataSource());
   gh.lazySingleton<String>(() => apiModule.baseUrlProd,
       instanceName: 'BaseUrl', registerFor: {_prod});
   gh.lazySingleton<String>(() => apiModule.baseUrlDev,
       instanceName: 'BaseUrl', registerFor: {_dev, _test});
-  gh.factory<_i10.TabsBloc>(() => _i10.TabsBloc());
+  gh.factory<_i9.TabsBloc>(() => _i9.TabsBloc());
+  gh.lazySingleton<_i10.YoutubeUrlService>(() => _i10.YoutubeUrlService());
   gh.factory<_i11.ApiService>(() => _i12.NasaGalleyApiService(
       envConstantsService: get<_i6.EnvConstantsService>()));
   gh.lazySingleton<_i13.Dio>(
       () => apiModule.dio(get<String>(instanceName: 'BaseUrl')));
-  gh.factory<_i14.HomeBloc>(
-      () => _i14.HomeBloc(homeService: get<_i7.HomeService>()));
-  gh.factory<_i15.RemoteDataSource>(() =>
-      _i16.NasaGalleryRemoteDataSource(apiService: get<_i11.ApiService>()));
-  gh.factory<_i17.Repository>(() => _i18.NasaGalleryRepository(
-      remoteDataSource: get<_i15.RemoteDataSource>(),
-      localDataSource: get<_i8.LocalDataSource>()));
-  gh.factory<_i19.ApiClient>(() => _i19.ApiClient(get<_i13.Dio>(),
+  gh.factory<_i14.RemoteDataSource>(() =>
+      _i15.NasaGalleryRemoteDataSource(apiService: get<_i11.ApiService>()));
+  gh.factory<_i16.Repository>(() => _i17.NasaGalleryRepository(
+      remoteDataSource: get<_i14.RemoteDataSource>(),
+      localDataSource: get<_i7.LocalDataSource>()));
+  gh.factory<_i18.ApiClient>(() => _i18.ApiClient(get<_i13.Dio>(),
       baseUrl: get<String>(instanceName: 'BaseUrl')));
-  gh.factory<_i20.GetAstronomyPictureOfTheDayUsecase>(
-      () => _i20.GetAstronomyPictureOfTheDayUsecase(get<_i17.Repository>()));
+  gh.factory<_i19.GetAstronomyPictureOfTheDayUsecase>(
+      () => _i19.GetAstronomyPictureOfTheDayUsecase(get<_i16.Repository>()));
+  gh.lazySingleton<_i20.HomeService>(() => _i20.HomeService(
+      get<_i19.GetAstronomyPictureOfTheDayUsecase>(),
+      get<_i10.YoutubeUrlService>()));
+  gh.factory<_i21.HomeBloc>(
+      () => _i21.HomeBloc(homeService: get<_i20.HomeService>()));
   return get;
 }
 
-class _$RoutesModule extends _i21.RoutesModule {}
+class _$RoutesModule extends _i22.RoutesModule {}
 
-class _$ApiModule extends _i22.ApiModule {}
+class _$ApiModule extends _i23.ApiModule {}

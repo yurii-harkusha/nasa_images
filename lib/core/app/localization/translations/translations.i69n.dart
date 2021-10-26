@@ -40,6 +40,10 @@ class Translations implements i69n.I69nMessageBundle {
   String get topics_tab => "Topics";
   String get news_tab => "News";
   String get configure_tab => "Configure";
+  String get data_loading_error =>
+      "Data loading error. Please check your internet connection or try later.";
+  String nasa_picture_of_day(String date, String pictureDescription) =>
+      "NASA astronomy picture of a day ${date}:\n${pictureDescription}";
   Object operator [](String key) {
     var index = key.indexOf('.');
     if (index > 0) {
@@ -57,6 +61,10 @@ class Translations implements i69n.I69nMessageBundle {
         return news_tab;
       case 'configure_tab':
         return configure_tab;
+      case 'data_loading_error':
+        return data_loading_error;
+      case 'nasa_picture_of_day':
+        return nasa_picture_of_day;
       default:
         throw Exception('Message $key doesn\'t exist in $this');
     }

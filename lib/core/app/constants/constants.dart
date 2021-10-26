@@ -6,4 +6,6 @@ class Constants {
   //YH: Generate your own API keys on 'https://api.nasa.gov'
   static String get prodNasaApiKey => PrivateConstants.prodNasaApiKey;
   static String get devNasaApiKey => PrivateConstants.devNasaApiKey;
+
+  static const String dateFormat = 'dd.MM.yyyy';
 }

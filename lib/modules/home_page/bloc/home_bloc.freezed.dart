@@ -20,6 +20,17 @@ class _$HomeEventTearOff {
   _Initialize initialize() {
     return const _Initialize();
   }
+
+  _ShowDataLoadErrorState showDataLoadErrorState() {
+    return const _ShowDataLoadErrorState();
+  }
+
+  _ShowInitializedState showInitializedState(
+      {required AstronomyPictureOfTheDay astronomyPictureOfTheDay}) {
+    return _ShowInitializedState(
+      astronomyPictureOfTheDay: astronomyPictureOfTheDay,
+    );
+  }
 }
 
 /// @nodoc
@@ -30,32 +41,48 @@ mixin _$HomeEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initialize,
+    required TResult Function() showDataLoadErrorState,
+    required TResult Function(AstronomyPictureOfTheDay astronomyPictureOfTheDay)
+        showInitializedState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initialize,
+    TResult Function()? showDataLoadErrorState,
+    TResult Function(AstronomyPictureOfTheDay astronomyPictureOfTheDay)?
+        showInitializedState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialize,
+    TResult Function()? showDataLoadErrorState,
+    TResult Function(AstronomyPictureOfTheDay astronomyPictureOfTheDay)?
+        showInitializedState,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialize value) initialize,
+    required TResult Function(_ShowDataLoadErrorState value)
+        showDataLoadErrorState,
+    required TResult Function(_ShowInitializedState value) showInitializedState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initialize value)? initialize,
+    TResult Function(_ShowDataLoadErrorState value)? showDataLoadErrorState,
+    TResult Function(_ShowInitializedState value)? showInitializedState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialize value)? initialize,
+    TResult Function(_ShowDataLoadErrorState value)? showDataLoadErrorState,
+    TResult Function(_ShowInitializedState value)? showInitializedState,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -117,6 +144,9 @@ class _$_Initialize implements _Initialize {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initialize,
+    required TResult Function() showDataLoadErrorState,
+    required TResult Function(AstronomyPictureOfTheDay astronomyPictureOfTheDay)
+        showInitializedState,
   }) {
     return initialize();
   }
@@ -125,6 +155,9 @@ class _$_Initialize implements _Initialize {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initialize,
+    TResult Function()? showDataLoadErrorState,
+    TResult Function(AstronomyPictureOfTheDay astronomyPictureOfTheDay)?
+        showInitializedState,
   }) {
     return initialize?.call();
   }
@@ -133,6 +166,9 @@ class _$_Initialize implements _Initialize {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialize,
+    TResult Function()? showDataLoadErrorState,
+    TResult Function(AstronomyPictureOfTheDay astronomyPictureOfTheDay)?
+        showInitializedState,
     required TResult orElse(),
   }) {
     if (initialize != null) {
@@ -145,6 +181,9 @@ class _$_Initialize implements _Initialize {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialize value) initialize,
+    required TResult Function(_ShowDataLoadErrorState value)
+        showDataLoadErrorState,
+    required TResult Function(_ShowInitializedState value) showInitializedState,
   }) {
     return initialize(this);
   }
@@ -153,6 +192,8 @@ class _$_Initialize implements _Initialize {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initialize value)? initialize,
+    TResult Function(_ShowDataLoadErrorState value)? showDataLoadErrorState,
+    TResult Function(_ShowInitializedState value)? showInitializedState,
   }) {
     return initialize?.call(this);
   }
@@ -161,6 +202,8 @@ class _$_Initialize implements _Initialize {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialize value)? initialize,
+    TResult Function(_ShowDataLoadErrorState value)? showDataLoadErrorState,
+    TResult Function(_ShowInitializedState value)? showInitializedState,
     required TResult orElse(),
   }) {
     if (initialize != null) {
@@ -175,6 +218,279 @@ abstract class _Initialize implements HomeEvent {
 }
 
 /// @nodoc
+abstract class _$ShowDataLoadErrorStateCopyWith<$Res> {
+  factory _$ShowDataLoadErrorStateCopyWith(_ShowDataLoadErrorState value,
+          $Res Function(_ShowDataLoadErrorState) then) =
+      __$ShowDataLoadErrorStateCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$ShowDataLoadErrorStateCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res>
+    implements _$ShowDataLoadErrorStateCopyWith<$Res> {
+  __$ShowDataLoadErrorStateCopyWithImpl(_ShowDataLoadErrorState _value,
+      $Res Function(_ShowDataLoadErrorState) _then)
+      : super(_value, (v) => _then(v as _ShowDataLoadErrorState));
+
+  @override
+  _ShowDataLoadErrorState get _value => super._value as _ShowDataLoadErrorState;
+}
+
+/// @nodoc
+
+class _$_ShowDataLoadErrorState implements _ShowDataLoadErrorState {
+  const _$_ShowDataLoadErrorState();
+
+  @override
+  String toString() {
+    return 'HomeEvent.showDataLoadErrorState()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _ShowDataLoadErrorState);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initialize,
+    required TResult Function() showDataLoadErrorState,
+    required TResult Function(AstronomyPictureOfTheDay astronomyPictureOfTheDay)
+        showInitializedState,
+  }) {
+    return showDataLoadErrorState();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialize,
+    TResult Function()? showDataLoadErrorState,
+    TResult Function(AstronomyPictureOfTheDay astronomyPictureOfTheDay)?
+        showInitializedState,
+  }) {
+    return showDataLoadErrorState?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialize,
+    TResult Function()? showDataLoadErrorState,
+    TResult Function(AstronomyPictureOfTheDay astronomyPictureOfTheDay)?
+        showInitializedState,
+    required TResult orElse(),
+  }) {
+    if (showDataLoadErrorState != null) {
+      return showDataLoadErrorState();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialize value) initialize,
+    required TResult Function(_ShowDataLoadErrorState value)
+        showDataLoadErrorState,
+    required TResult Function(_ShowInitializedState value) showInitializedState,
+  }) {
+    return showDataLoadErrorState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialize value)? initialize,
+    TResult Function(_ShowDataLoadErrorState value)? showDataLoadErrorState,
+    TResult Function(_ShowInitializedState value)? showInitializedState,
+  }) {
+    return showDataLoadErrorState?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialize value)? initialize,
+    TResult Function(_ShowDataLoadErrorState value)? showDataLoadErrorState,
+    TResult Function(_ShowInitializedState value)? showInitializedState,
+    required TResult orElse(),
+  }) {
+    if (showDataLoadErrorState != null) {
+      return showDataLoadErrorState(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ShowDataLoadErrorState implements HomeEvent {
+  const factory _ShowDataLoadErrorState() = _$_ShowDataLoadErrorState;
+}
+
+/// @nodoc
+abstract class _$ShowInitializedStateCopyWith<$Res> {
+  factory _$ShowInitializedStateCopyWith(_ShowInitializedState value,
+          $Res Function(_ShowInitializedState) then) =
+      __$ShowInitializedStateCopyWithImpl<$Res>;
+  $Res call({AstronomyPictureOfTheDay astronomyPictureOfTheDay});
+
+  $AstronomyPictureOfTheDayCopyWith<$Res> get astronomyPictureOfTheDay;
+}
+
+/// @nodoc
+class __$ShowInitializedStateCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res>
+    implements _$ShowInitializedStateCopyWith<$Res> {
+  __$ShowInitializedStateCopyWithImpl(
+      _ShowInitializedState _value, $Res Function(_ShowInitializedState) _then)
+      : super(_value, (v) => _then(v as _ShowInitializedState));
+
+  @override
+  _ShowInitializedState get _value => super._value as _ShowInitializedState;
+
+  @override
+  $Res call({
+    Object? astronomyPictureOfTheDay = freezed,
+  }) {
+    return _then(_ShowInitializedState(
+      astronomyPictureOfTheDay: astronomyPictureOfTheDay == freezed
+          ? _value.astronomyPictureOfTheDay
+          : astronomyPictureOfTheDay // ignore: cast_nullable_to_non_nullable
+              as AstronomyPictureOfTheDay,
+    ));
+  }
+
+  @override
+  $AstronomyPictureOfTheDayCopyWith<$Res> get astronomyPictureOfTheDay {
+    return $AstronomyPictureOfTheDayCopyWith<$Res>(
+        _value.astronomyPictureOfTheDay, (value) {
+      return _then(_value.copyWith(astronomyPictureOfTheDay: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$_ShowInitializedState implements _ShowInitializedState {
+  const _$_ShowInitializedState({required this.astronomyPictureOfTheDay});
+
+  @override
+  final AstronomyPictureOfTheDay astronomyPictureOfTheDay;
+
+  @override
+  String toString() {
+    return 'HomeEvent.showInitializedState(astronomyPictureOfTheDay: $astronomyPictureOfTheDay)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _ShowInitializedState &&
+            (identical(
+                    other.astronomyPictureOfTheDay, astronomyPictureOfTheDay) ||
+                other.astronomyPictureOfTheDay == astronomyPictureOfTheDay));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, astronomyPictureOfTheDay);
+
+  @JsonKey(ignore: true)
+  @override
+  _$ShowInitializedStateCopyWith<_ShowInitializedState> get copyWith =>
+      __$ShowInitializedStateCopyWithImpl<_ShowInitializedState>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initialize,
+    required TResult Function() showDataLoadErrorState,
+    required TResult Function(AstronomyPictureOfTheDay astronomyPictureOfTheDay)
+        showInitializedState,
+  }) {
+    return showInitializedState(astronomyPictureOfTheDay);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialize,
+    TResult Function()? showDataLoadErrorState,
+    TResult Function(AstronomyPictureOfTheDay astronomyPictureOfTheDay)?
+        showInitializedState,
+  }) {
+    return showInitializedState?.call(astronomyPictureOfTheDay);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialize,
+    TResult Function()? showDataLoadErrorState,
+    TResult Function(AstronomyPictureOfTheDay astronomyPictureOfTheDay)?
+        showInitializedState,
+    required TResult orElse(),
+  }) {
+    if (showInitializedState != null) {
+      return showInitializedState(astronomyPictureOfTheDay);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialize value) initialize,
+    required TResult Function(_ShowDataLoadErrorState value)
+        showDataLoadErrorState,
+    required TResult Function(_ShowInitializedState value) showInitializedState,
+  }) {
+    return showInitializedState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialize value)? initialize,
+    TResult Function(_ShowDataLoadErrorState value)? showDataLoadErrorState,
+    TResult Function(_ShowInitializedState value)? showInitializedState,
+  }) {
+    return showInitializedState?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialize value)? initialize,
+    TResult Function(_ShowDataLoadErrorState value)? showDataLoadErrorState,
+    TResult Function(_ShowInitializedState value)? showInitializedState,
+    required TResult orElse(),
+  }) {
+    if (showInitializedState != null) {
+      return showInitializedState(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ShowInitializedState implements HomeEvent {
+  const factory _ShowInitializedState(
+          {required AstronomyPictureOfTheDay astronomyPictureOfTheDay}) =
+      _$_ShowInitializedState;
+
+  AstronomyPictureOfTheDay get astronomyPictureOfTheDay;
+  @JsonKey(ignore: true)
+  _$ShowInitializedStateCopyWith<_ShowInitializedState> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 class _$HomeStateTearOff {
   const _$HomeStateTearOff();
 
@@ -182,8 +498,15 @@ class _$HomeStateTearOff {
     return const Loading();
   }
 
-  Initialized initialized() {
-    return const Initialized();
+  Initialized initialized(
+      {required AstronomyPictureOfTheDay astronomyPictureOfTheDay}) {
+    return Initialized(
+      astronomyPictureOfTheDay: astronomyPictureOfTheDay,
+    );
+  }
+
+  DataLoadError dataLoadError() {
+    return const DataLoadError();
   }
 }
 
@@ -195,19 +518,25 @@ mixin _$HomeState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function() initialized,
+    required TResult Function(AstronomyPictureOfTheDay astronomyPictureOfTheDay)
+        initialized,
+    required TResult Function() dataLoadError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function()? initialized,
+    TResult Function(AstronomyPictureOfTheDay astronomyPictureOfTheDay)?
+        initialized,
+    TResult Function()? dataLoadError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function()? initialized,
+    TResult Function(AstronomyPictureOfTheDay astronomyPictureOfTheDay)?
+        initialized,
+    TResult Function()? dataLoadError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -215,18 +544,21 @@ mixin _$HomeState {
   TResult map<TResult extends Object?>({
     required TResult Function(Loading value) loading,
     required TResult Function(Initialized value) initialized,
+    required TResult Function(DataLoadError value) dataLoadError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Loading value)? loading,
     TResult Function(Initialized value)? initialized,
+    TResult Function(DataLoadError value)? dataLoadError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Loading value)? loading,
     TResult Function(Initialized value)? initialized,
+    TResult Function(DataLoadError value)? dataLoadError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -286,7 +618,9 @@ class _$Loading implements Loading {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function() initialized,
+    required TResult Function(AstronomyPictureOfTheDay astronomyPictureOfTheDay)
+        initialized,
+    required TResult Function() dataLoadError,
   }) {
     return loading();
   }
@@ -295,7 +629,9 @@ class _$Loading implements Loading {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function()? initialized,
+    TResult Function(AstronomyPictureOfTheDay astronomyPictureOfTheDay)?
+        initialized,
+    TResult Function()? dataLoadError,
   }) {
     return loading?.call();
   }
@@ -304,7 +640,9 @@ class _$Loading implements Loading {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function()? initialized,
+    TResult Function(AstronomyPictureOfTheDay astronomyPictureOfTheDay)?
+        initialized,
+    TResult Function()? dataLoadError,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -318,6 +656,7 @@ class _$Loading implements Loading {
   TResult map<TResult extends Object?>({
     required TResult Function(Loading value) loading,
     required TResult Function(Initialized value) initialized,
+    required TResult Function(DataLoadError value) dataLoadError,
   }) {
     return loading(this);
   }
@@ -327,6 +666,7 @@ class _$Loading implements Loading {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Loading value)? loading,
     TResult Function(Initialized value)? initialized,
+    TResult Function(DataLoadError value)? dataLoadError,
   }) {
     return loading?.call(this);
   }
@@ -336,6 +676,7 @@ class _$Loading implements Loading {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Loading value)? loading,
     TResult Function(Initialized value)? initialized,
+    TResult Function(DataLoadError value)? dataLoadError,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -354,6 +695,9 @@ abstract class $InitializedCopyWith<$Res> {
   factory $InitializedCopyWith(
           Initialized value, $Res Function(Initialized) then) =
       _$InitializedCopyWithImpl<$Res>;
+  $Res call({AstronomyPictureOfTheDay astronomyPictureOfTheDay});
+
+  $AstronomyPictureOfTheDayCopyWith<$Res> get astronomyPictureOfTheDay;
 }
 
 /// @nodoc
@@ -365,54 +709,92 @@ class _$InitializedCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res>
 
   @override
   Initialized get _value => super._value as Initialized;
+
+  @override
+  $Res call({
+    Object? astronomyPictureOfTheDay = freezed,
+  }) {
+    return _then(Initialized(
+      astronomyPictureOfTheDay: astronomyPictureOfTheDay == freezed
+          ? _value.astronomyPictureOfTheDay
+          : astronomyPictureOfTheDay // ignore: cast_nullable_to_non_nullable
+              as AstronomyPictureOfTheDay,
+    ));
+  }
+
+  @override
+  $AstronomyPictureOfTheDayCopyWith<$Res> get astronomyPictureOfTheDay {
+    return $AstronomyPictureOfTheDayCopyWith<$Res>(
+        _value.astronomyPictureOfTheDay, (value) {
+      return _then(_value.copyWith(astronomyPictureOfTheDay: value));
+    });
+  }
 }
 
 /// @nodoc
 
 class _$Initialized implements Initialized {
-  const _$Initialized();
+  const _$Initialized({required this.astronomyPictureOfTheDay});
+
+  @override
+  final AstronomyPictureOfTheDay astronomyPictureOfTheDay;
 
   @override
   String toString() {
-    return 'HomeState.initialized()';
+    return 'HomeState.initialized(astronomyPictureOfTheDay: $astronomyPictureOfTheDay)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is Initialized);
+        (other.runtimeType == runtimeType &&
+            other is Initialized &&
+            (identical(
+                    other.astronomyPictureOfTheDay, astronomyPictureOfTheDay) ||
+                other.astronomyPictureOfTheDay == astronomyPictureOfTheDay));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, astronomyPictureOfTheDay);
+
+  @JsonKey(ignore: true)
+  @override
+  $InitializedCopyWith<Initialized> get copyWith =>
+      _$InitializedCopyWithImpl<Initialized>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function() initialized,
+    required TResult Function(AstronomyPictureOfTheDay astronomyPictureOfTheDay)
+        initialized,
+    required TResult Function() dataLoadError,
   }) {
-    return initialized();
+    return initialized(astronomyPictureOfTheDay);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function()? initialized,
+    TResult Function(AstronomyPictureOfTheDay astronomyPictureOfTheDay)?
+        initialized,
+    TResult Function()? dataLoadError,
   }) {
-    return initialized?.call();
+    return initialized?.call(astronomyPictureOfTheDay);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function()? initialized,
+    TResult Function(AstronomyPictureOfTheDay astronomyPictureOfTheDay)?
+        initialized,
+    TResult Function()? dataLoadError,
     required TResult orElse(),
   }) {
     if (initialized != null) {
-      return initialized();
+      return initialized(astronomyPictureOfTheDay);
     }
     return orElse();
   }
@@ -422,6 +804,7 @@ class _$Initialized implements Initialized {
   TResult map<TResult extends Object?>({
     required TResult Function(Loading value) loading,
     required TResult Function(Initialized value) initialized,
+    required TResult Function(DataLoadError value) dataLoadError,
   }) {
     return initialized(this);
   }
@@ -431,6 +814,7 @@ class _$Initialized implements Initialized {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Loading value)? loading,
     TResult Function(Initialized value)? initialized,
+    TResult Function(DataLoadError value)? dataLoadError,
   }) {
     return initialized?.call(this);
   }
@@ -440,6 +824,7 @@ class _$Initialized implements Initialized {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Loading value)? loading,
     TResult Function(Initialized value)? initialized,
+    TResult Function(DataLoadError value)? dataLoadError,
     required TResult orElse(),
   }) {
     if (initialized != null) {
@@ -450,5 +835,125 @@ class _$Initialized implements Initialized {
 }
 
 abstract class Initialized implements HomeState {
-  const factory Initialized() = _$Initialized;
+  const factory Initialized(
+          {required AstronomyPictureOfTheDay astronomyPictureOfTheDay}) =
+      _$Initialized;
+
+  AstronomyPictureOfTheDay get astronomyPictureOfTheDay;
+  @JsonKey(ignore: true)
+  $InitializedCopyWith<Initialized> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $DataLoadErrorCopyWith<$Res> {
+  factory $DataLoadErrorCopyWith(
+          DataLoadError value, $Res Function(DataLoadError) then) =
+      _$DataLoadErrorCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$DataLoadErrorCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res>
+    implements $DataLoadErrorCopyWith<$Res> {
+  _$DataLoadErrorCopyWithImpl(
+      DataLoadError _value, $Res Function(DataLoadError) _then)
+      : super(_value, (v) => _then(v as DataLoadError));
+
+  @override
+  DataLoadError get _value => super._value as DataLoadError;
+}
+
+/// @nodoc
+
+class _$DataLoadError implements DataLoadError {
+  const _$DataLoadError();
+
+  @override
+  String toString() {
+    return 'HomeState.dataLoadError()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is DataLoadError);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() loading,
+    required TResult Function(AstronomyPictureOfTheDay astronomyPictureOfTheDay)
+        initialized,
+    required TResult Function() dataLoadError,
+  }) {
+    return dataLoadError();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? loading,
+    TResult Function(AstronomyPictureOfTheDay astronomyPictureOfTheDay)?
+        initialized,
+    TResult Function()? dataLoadError,
+  }) {
+    return dataLoadError?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loading,
+    TResult Function(AstronomyPictureOfTheDay astronomyPictureOfTheDay)?
+        initialized,
+    TResult Function()? dataLoadError,
+    required TResult orElse(),
+  }) {
+    if (dataLoadError != null) {
+      return dataLoadError();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Loading value) loading,
+    required TResult Function(Initialized value) initialized,
+    required TResult Function(DataLoadError value) dataLoadError,
+  }) {
+    return dataLoadError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Loading value)? loading,
+    TResult Function(Initialized value)? initialized,
+    TResult Function(DataLoadError value)? dataLoadError,
+  }) {
+    return dataLoadError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Loading value)? loading,
+    TResult Function(Initialized value)? initialized,
+    TResult Function(DataLoadError value)? dataLoadError,
+    required TResult orElse(),
+  }) {
+    if (dataLoadError != null) {
+      return dataLoadError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DataLoadError implements HomeState {
+  const factory DataLoadError() = _$DataLoadError;
 }

@@ -4,6 +4,7 @@ import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
+import '../../../core/data/models/remote/astronomy_picture_of_the_day.dart';
 import '../services/home_service.dart';
 
 part 'home_bloc.freezed.dart';
@@ -24,8 +25,31 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   ) async* {
     yield* event.map(
       initialize: (e) async* {
-        yield const HomeState.initialized();
+        final astronomyPictureOfTheDayResult =
+            await homeService.getAstronomyPictureOfTheDay();
+
+        astronomyPictureOfTheDayResult.fold(
+          (failure) => add(
+            const HomeEvent.showDataLoadErrorState(),
+          ),
+          (astronomyPictureOfTheDay) => add(
+            HomeEvent.showInitializedState(
+                astronomyPictureOfTheDay: astronomyPictureOfTheDay),
+          ),
+        );
+      },
+      showInitializedState: (e) async* {
+        yield HomeState.initialized(
+            astronomyPictureOfTheDay: e.astronomyPictureOfTheDay);
+      },
+      showDataLoadErrorState: (e) async* {
+        yield const HomeState.dataLoadError();
       },
     );
   }
+
+  String getImageUrlFromAstronomyPictureOfTheDay(
+          AstronomyPictureOfTheDay astronomyPictureOfTheDay) =>
+      homeService
+          .getImageUrlFromAstronomyPictureOfTheDay(astronomyPictureOfTheDay);
 }

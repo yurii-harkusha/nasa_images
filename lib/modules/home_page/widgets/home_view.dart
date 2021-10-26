@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../shared_widgets/general/image_cards/image_preview_card.dart';
+import '../../../core/app/localization/app_localization.dart';
+import '../../../core/app/theme/app_theme.dart';
 import '../../../shared_widgets/general/loading_view.dart';
 import '../bloc/home_bloc.dart';
+import 'home_view_initialized.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({
@@ -20,28 +22,18 @@ class HomeView extends StatelessWidget {
         body: SafeArea(
           child: BlocBuilder<HomeBloc, HomeState>(
             builder: (context, state) => state.map(
-              loading: (value) => LoadingView(
+              loading: (e) => LoadingView(
                 color: Theme.of(context).colorScheme.primary,
               ),
-              initialized: (value) => Container(
-                color: Theme.of(context).colorScheme.background,
-                child: SingleChildScrollView(
-                  child: Padding(
-                    padding: const EdgeInsets.all(pagePaddingSize),
-                    child: Column(
-                      children: [
-                        SizedBox(
-                          child: ImagePreviewCard(
-                            height: getImagePreviewCardHeight(context),
-                            width: getImagePreviewCardWidth(context),
-                            imageUrl:
-                                'https://upload.wikimedia.org/wikipedia/commons/7/7c/Aspect_ratio_16_9_example.jpg',
-                            tapCallback: () {},
-                          ),
-                        )
-                      ],
-                    ),
+              initialized: (e) => HomeViewInitialized(
+                  astronomyPictureOfTheDay: e.astronomyPictureOfTheDay),
+              dataLoadError: (e) => Center(
+                child: Text(
+                  AppLocalization.of(context).data_loading_error,
+                  style: textTheme.headline5!.copyWith(
+                    color: Theme.of(context).colorScheme.onBackground,
                   ),
+                  textAlign: TextAlign.center,
                 ),
               ),
             ),
