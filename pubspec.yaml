@@ -21,13 +21,14 @@ dependencies:
   i69n: ^2.0.1
   freezed_annotation: ^0.15.0
   flutter_svg: ^0.23.0+1
-  auto_route: ^3.0.3
+  auto_route: ^3.0.4
   google_fonts: ^2.1.0
   dio: ^4.0.1
   retrofit: ^2.0.1
   json_annotation: ^4.3.0
   dartz: ^0.10.0
   equatable: ^2.0.3
+  cached_network_image: ^3.1.0
 
 dev_dependencies:
   flutter_test:
