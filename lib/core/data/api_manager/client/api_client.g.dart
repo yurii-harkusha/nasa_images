@@ -21,12 +21,12 @@ class _ApiClient implements ApiClient {
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<AstronomyPictureOfTheDay>(Options(
-                method: 'GET', headers: _headers, extra: _extra)
-            .compose(
-                _dio.options, '/planetary/apod?api_key=$api_key&thumbs=$thumbs',
-                queryParameters: queryParameters, data: _data)
-            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+        _setStreamType<AstronomyPictureOfTheDay>(
+            Options(method: 'GET', headers: _headers, extra: _extra)
+                .compose(_dio.options,
+                    '/planetary/apod?api_key=${api_key}&thumbs=${thumbs}',
+                    queryParameters: queryParameters, data: _data)
+                .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     final value = AstronomyPictureOfTheDay.fromJson(_result.data!);
     return value;
   }

@@ -7,6 +7,8 @@
 // **************************************************************************
 // AutoRouteGenerator
 // **************************************************************************
+//
+// ignore_for_file: type=lint
 
 import 'package:auto_route/auto_route.dart' as _i3;
 import 'package:flutter/material.dart' as _i4;
@@ -37,16 +39,18 @@ class AppRouter extends _i3.RootStackRouter {
       ];
 }
 
-/// generated route for [_i1.TabsPage]
+/// generated route for
+/// [_i1.TabsPage]
 class TabsPageRoute extends _i3.PageRouteInfo<void> {
-  const TabsPageRoute() : super(name, path: '/');
+  const TabsPageRoute() : super(TabsPageRoute.name, path: '/');
 
   static const String name = 'TabsPageRoute';
 }
 
-/// generated route for [_i2.HomePage]
+/// generated route for
+/// [_i2.HomePage]
 class HomePageRoute extends _i3.PageRouteInfo<void> {
-  const HomePageRoute() : super(name, path: '/home-page');
+  const HomePageRoute() : super(HomePageRoute.name, path: '/home-page');
 
   static const String name = 'HomePageRoute';
 }

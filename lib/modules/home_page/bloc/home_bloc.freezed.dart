@@ -392,13 +392,13 @@ class _$_ShowInitializedState implements _ShowInitializedState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _ShowInitializedState &&
-            (identical(
-                    other.astronomyPictureOfTheDay, astronomyPictureOfTheDay) ||
-                other.astronomyPictureOfTheDay == astronomyPictureOfTheDay));
+            const DeepCollectionEquality().equals(
+                other.astronomyPictureOfTheDay, astronomyPictureOfTheDay));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, astronomyPictureOfTheDay);
+  int get hashCode => Object.hash(runtimeType,
+      const DeepCollectionEquality().hash(astronomyPictureOfTheDay));
 
   @JsonKey(ignore: true)
   @override
@@ -749,13 +749,13 @@ class _$Initialized implements Initialized {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is Initialized &&
-            (identical(
-                    other.astronomyPictureOfTheDay, astronomyPictureOfTheDay) ||
-                other.astronomyPictureOfTheDay == astronomyPictureOfTheDay));
+            const DeepCollectionEquality().equals(
+                other.astronomyPictureOfTheDay, astronomyPictureOfTheDay));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, astronomyPictureOfTheDay);
+  int get hashCode => Object.hash(runtimeType,
+      const DeepCollectionEquality().hash(astronomyPictureOfTheDay));
 
   @JsonKey(ignore: true)
   @override

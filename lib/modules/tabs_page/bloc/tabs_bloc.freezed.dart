@@ -133,7 +133,7 @@ class __$SelectTabCopyWithImpl<$Res> extends _$TabsEventCopyWithImpl<$Res>
 class _$_SelectTab implements _SelectTab {
   const _$_SelectTab({this.index = 0});
 
-  @JsonKey(defaultValue: 0)
+  @JsonKey()
   @override
   final int index;
 
@@ -147,11 +147,12 @@ class _$_SelectTab implements _SelectTab {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _SelectTab &&
-            (identical(other.index, index) || other.index == index));
+            const DeepCollectionEquality().equals(other.index, index));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, index);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(index));
 
   @JsonKey(ignore: true)
   @override
@@ -345,7 +346,7 @@ class __$LoadedCopyWithImpl<$Res> extends _$TabsStateCopyWithImpl<$Res>
 class _$_Loaded implements _Loaded {
   const _$_Loaded({this.selectedIndex = 0});
 
-  @JsonKey(defaultValue: 0)
+  @JsonKey()
   @override
   final int selectedIndex;
 
@@ -359,12 +360,13 @@ class _$_Loaded implements _Loaded {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _Loaded &&
-            (identical(other.selectedIndex, selectedIndex) ||
-                other.selectedIndex == selectedIndex));
+            const DeepCollectionEquality()
+                .equals(other.selectedIndex, selectedIndex));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, selectedIndex);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(selectedIndex));
 
   @JsonKey(ignore: true)
   @override

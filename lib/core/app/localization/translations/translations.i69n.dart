@@ -66,7 +66,7 @@ class Translations implements i69n.I69nMessageBundle {
       case 'nasa_picture_of_day':
         return nasa_picture_of_day;
       default:
-        throw Exception('Message $key doesn\'t exist in $this');
+        return key;
     }
   }
 }

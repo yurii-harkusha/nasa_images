@@ -235,28 +235,28 @@ class _$_AstronomyPictureOfTheDay implements _AstronomyPictureOfTheDay {
   factory _$_AstronomyPictureOfTheDay.fromJson(Map<String, dynamic> json) =>
       _$$_AstronomyPictureOfTheDayFromJson(json);
 
-  @JsonKey(defaultValue: '')
+  @JsonKey()
   @override
   final String copyright;
-  @JsonKey(defaultValue: '')
+  @JsonKey()
   @override
   final String date;
-  @JsonKey(defaultValue: '')
+  @JsonKey()
   @override
   final String explanation;
-  @JsonKey(defaultValue: '')
+  @JsonKey()
   @override
   final String hdurl;
-  @JsonKey(defaultValue: '')
+  @JsonKey()
   @override
   final String media_type;
-  @JsonKey(defaultValue: '')
+  @JsonKey()
   @override
   final String service_version;
-  @JsonKey(defaultValue: '')
+  @JsonKey()
   @override
   final String title;
-  @JsonKey(defaultValue: '')
+  @JsonKey()
   @override
   final String url;
 
@@ -270,23 +270,30 @@ class _$_AstronomyPictureOfTheDay implements _AstronomyPictureOfTheDay {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _AstronomyPictureOfTheDay &&
-            (identical(other.copyright, copyright) ||
-                other.copyright == copyright) &&
-            (identical(other.date, date) || other.date == date) &&
-            (identical(other.explanation, explanation) ||
-                other.explanation == explanation) &&
-            (identical(other.hdurl, hdurl) || other.hdurl == hdurl) &&
-            (identical(other.media_type, media_type) ||
-                other.media_type == media_type) &&
-            (identical(other.service_version, service_version) ||
-                other.service_version == service_version) &&
-            (identical(other.title, title) || other.title == title) &&
-            (identical(other.url, url) || other.url == url));
+            const DeepCollectionEquality().equals(other.copyright, copyright) &&
+            const DeepCollectionEquality().equals(other.date, date) &&
+            const DeepCollectionEquality()
+                .equals(other.explanation, explanation) &&
+            const DeepCollectionEquality().equals(other.hdurl, hdurl) &&
+            const DeepCollectionEquality()
+                .equals(other.media_type, media_type) &&
+            const DeepCollectionEquality()
+                .equals(other.service_version, service_version) &&
+            const DeepCollectionEquality().equals(other.title, title) &&
+            const DeepCollectionEquality().equals(other.url, url));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, copyright, date, explanation,
-      hdurl, media_type, service_version, title, url);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(copyright),
+      const DeepCollectionEquality().hash(date),
+      const DeepCollectionEquality().hash(explanation),
+      const DeepCollectionEquality().hash(hdurl),
+      const DeepCollectionEquality().hash(media_type),
+      const DeepCollectionEquality().hash(service_version),
+      const DeepCollectionEquality().hash(title),
+      const DeepCollectionEquality().hash(url));
 
   @JsonKey(ignore: true)
   @override

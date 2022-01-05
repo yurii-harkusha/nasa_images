@@ -129,7 +129,7 @@ class _$_AstronomyPictureOfTheDayRequest
           Map<String, dynamic> json) =>
       _$$_AstronomyPictureOfTheDayRequestFromJson(json);
 
-  @JsonKey(defaultValue: false)
+  @JsonKey()
   @override //@Default('today') String date,
 //@Default('none') String start_date,
 //@Default('today') String end_date,
@@ -146,11 +146,12 @@ class _$_AstronomyPictureOfTheDayRequest
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _AstronomyPictureOfTheDayRequest &&
-            (identical(other.thumbs, thumbs) || other.thumbs == thumbs));
+            const DeepCollectionEquality().equals(other.thumbs, thumbs));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, thumbs);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(thumbs));
 
   @JsonKey(ignore: true)
   @override
